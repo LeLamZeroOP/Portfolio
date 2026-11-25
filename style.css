@@ -126,6 +126,34 @@ section + section { padding-top: 2.5rem; border-top: 1px solid var(--border); }
 section p { max-width: 65ch; }
 h2 { margin: 0 0 1rem; font-size: 1.5rem; letter-spacing: -0.02em; }
 
+.section-lead {
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin: -.25rem 0 1rem;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .75rem;
+}
+.achievements-list li {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+.achievement-title { font-weight: 600; color: var(--text); }
+.achievement-detail { color: var(--muted); font-family: var(--font-mono); font-size: .9rem; }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
