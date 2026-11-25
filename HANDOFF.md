@@ -74,3 +74,35 @@ Next agent should (Gemini): round 2 review. Check the rendered page at 360px and
 focus order and colour contrast (muted text on `--surface`, accent on `--surface-hover`).
 Questions for the owner: name, headline, bio, 3-6 projects (title, description, tech, link), skills,
 contact links, optional photo, GitHub username.
+
+## 2026-11-25 - Gemini (Antigravity)
+Did: Reviewed Round 1 implementation (`index.html`, `style.css`) for 360px mobile layout, focus order, and contrast (Round 2).
+Next agent should (Claude): Implement the following 5 concrete suggestions (keeping all `TODO:` placeholders):
+1. **Fix `focus-visible` and skip-link focus target (`index.html`, `style.css`)**: Add `tabindex="-1"` to `<main id="main">` and `main:focus { outline: none; }` so activating the skip link reliably moves keyboard focus into `<main>`. Also remove `border-radius: 4px;` from `a:focus-visible` so `.btn` keeps its `8px` radius when focused.
+2. **Mobile 360px topbar & tap targets (`style.css`)**: Give `.brand` `display: inline-flex; align-items: center; min-height: 44px;` to match `nav a`. Add a `@media (max-width: 600px)` block that reduces `.topbar` `margin-bottom` from `3.5rem` to `2rem` and aligns wrapped `nav` links cleanly with `.brand` (e.g. `nav { margin-left: -.75rem; }`).
+3. **Section separation & `h2` rhythm (`style.css`)**: Add `section + section { padding-top: 2.5rem; border-top: 1px solid var(--border); }` and `h2 { margin: 0 0 1rem; font-size: 1.5rem; letter-spacing: -0.02em; }` so each section has crisp visual breathing room.
+4. **Upgrade `#contact` links for mobile & clarity (`index.html`, `style.css`)**: Replace the inline `Email · GitHub` text with a `<ul class="contact-links">` flex row of pill/button-style links (`min-height: 44px`, `1px solid var(--border)`, hover highlight) so contact links are easy to tap on mobile. Add `rel="noopener noreferrer"` to the external GitHub link.
+5. **Browser dark color-scheme hint (`index.html`)**: Add `<meta name="color-scheme" content="dark">` in `<head>` so native browser UI (scrollbars, selection) matches the dark-slate palette.
+Questions for the owner: Same open questions from Setup (name, headline, bio, 3-6 projects, skills, contact links, optional photo, GitHub username).
+
+## 2026-11-25 - Claude
+Did: Implemented Gemini's round 2 review (commit 87437bd).
+1. `<main id="main" tabindex="-1">` plus `main:focus { outline: none; }`. Removed `border-radius` from
+   `a:focus-visible`, so `.btn` keeps its 8px radius when focused.
+2. `.brand` is now inline-flex with a 44px min height. Under 600px the `.topbar` margin is 2rem and
+   `nav` has `margin-left: -.75rem`.
+3. `section + section` has a top border and 2.5rem padding. `h2` is 1.5rem with `margin: 0 0 1rem`.
+4. Contact is now `<ul class="contact-links">`: pill links with a 44px min height, a border, and an
+   accent border on hover. The `TODO` hrefs are unchanged.
+5. Added `<meta name="color-scheme" content="dark">`.
+Skipped: `rel="noopener noreferrer"` on the GitHub link. It only matters with `target="_blank"`. The
+link opens in the same tab, which is the better default for accessibility, so the attribute would do
+nothing. If we ever open links in a new tab, add both together.
+Note on item 2: between about 480px and 600px the nav may still sit on the same line as the brand. There
+the -.75rem just narrows the gap a little, which looks fine. It still needs a visual check.
+Not checked: I still could not open the page in a browser here.
+Next agent should (Gemini): round 3 review. Check the rendered page at 360px, 600px and desktop widths,
+especially the topbar wrap and the contact pills. If nothing new comes up, say "NO NEW IDEAS". After
+that, the site mostly needs the owner's real content.
+Questions for the owner: name, headline, bio, 3-6 projects (title, description, tech, link), skills,
+contact links (email, GitHub, others?), optional photo, GitHub username.
