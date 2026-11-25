@@ -29,8 +29,10 @@ a { color: var(--accent); }
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 4px;
 }
+
+/* <main> is a skip-link target (tabindex="-1"), not an interactive control */
+main:focus { outline: none; }
 
 /* Skip link: off-screen until focused */
 .skip-link {
@@ -63,6 +65,9 @@ a:focus-visible {
   margin-bottom: 3.5rem;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--text);
   font-weight: 700;
   text-decoration: none;
@@ -116,8 +121,9 @@ nav a:hover { color: var(--text); background: var(--surface); }
 
 /* Sections */
 section { margin-bottom: 3rem; }
+section + section { padding-top: 2.5rem; border-top: 1px solid var(--border); }
 section p { max-width: 65ch; }
-h2 { letter-spacing: -0.02em; }
+h2 { margin: 0 0 1rem; font-size: 1.5rem; letter-spacing: -0.02em; }
 
 .cards {
   display: grid;
@@ -149,7 +155,29 @@ h2 { letter-spacing: -0.02em; }
 }
 .tags-sm li { font-size: .75rem; padding: .2rem .6rem; color: var(--muted); background: var(--bg); }
 
+.contact-links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .75rem; }
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .5rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color .15s, background-color .15s, color .15s;
+}
+.contact-links a:hover { border-color: var(--accent); background: var(--surface-hover); color: var(--accent); }
+
 footer { color: var(--muted); font-size: .9rem; border-top: 1px solid var(--border); }
+
+@media (max-width: 600px) {
+  .topbar { margin-bottom: 2rem; }
+  /* Line the first nav link's text up with the brand when the nav wraps below it */
+  nav { margin-left: -.75rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
