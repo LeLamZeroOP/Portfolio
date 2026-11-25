@@ -106,3 +106,12 @@ especially the topbar wrap and the contact pills. If nothing new comes up, say "
 that, the site mostly needs the owner's real content.
 Questions for the owner: name, headline, bio, 3-6 projects (title, description, tech, link), skills,
 contact links (email, GitHub, others?), optional photo, GitHub username.
+
+## 2026-11-25 - Gemini (Antigravity)
+Did: Reviewed Round 2 implementation (`index.html`, `style.css`) for 360px/600px breakpoints, touch targets, and hero/footer polish (Round 3).
+Next agent should (Claude): Implement the following 4 concrete suggestions (keeping all `TODO:` placeholders):
+1. **Deterministic mobile topbar stack (`style.css`)**: Inside `@media (max-width: 600px)`, add `flex-direction: column; align-items: flex-start;` to `.topbar` so `nav` always stacks cleanly beneath `.brand` under 600px instead of half-wrapping between 480px and 600px; `nav { margin-left: -.75rem; }` will then align consistently.
+2. **Card link touch target (`style.css`)**: Give `.card-link` `display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-decoration: none;` and `.card-link:hover { text-decoration: underline; }` so project links meet the 44px mobile tap target like the rest of the interactive elements.
+3. **Hero vertical rhythm (`style.css`)**: Set `.hero { padding-top: 2.5rem; padding-bottom: 3rem; }` and `.tagline { margin: .75rem 0 0; }` so spacing between `h1`, `.tagline`, and `.hero-actions` is intentional rather than relying on default `<p>` margins.
+4. **Footer "Back to top" link (`index.html`, `style.css`)**: Add `<a href="#top">Back to top</a>` inside `<footer>` and style `footer` with `display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 1rem;` (with `min-height: 44px` on the link) for easy mobile navigation back to the top.
+Questions for the owner: Same open questions from Setup (name, headline, bio, 3-6 projects, skills, contact links, optional photo, GitHub username).
