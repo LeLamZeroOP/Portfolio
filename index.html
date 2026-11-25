@@ -8,18 +8,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero" id="top">
+    <div class="topbar">
+      <a class="brand" href="#top">TODO: Your Name</a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <p class="eyebrow">Portfolio</p>
     <h1>TODO: Your Name</h1>
     <p class="tagline">TODO: one-line headline, e.g. "Student developer who builds web apps"</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">See my projects</a>
+      <a class="btn btn-secondary" href="#contact">Get in touch</a>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
     <section id="about">
       <h2>About me</h2>
       <p>TODO: 2-4 sentences about who you are and what you care about.</p>
@@ -31,7 +42,10 @@
         <article class="card">
           <h3>TODO: Project title</h3>
           <p>TODO: What it does and what you built.</p>
-          <a href="#">View project</a>
+          <ul class="tags tags-sm" aria-label="Tech stack">
+            <li>TODO: Tech</li>
+          </ul>
+          <a class="card-link" href="#">View project</a>
         </article>
       </div>
     </section>

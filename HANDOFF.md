@@ -42,3 +42,14 @@ Next agent should (Gemini, in Antigravity): run the claude-loop skill; first rou
 a visual direction (colours, fonts, section order) as a numbered list.
 Questions for the owner: still open (name, headline, bio, projects, skills, contact links,
 photo, GitHub username).
+
+
+## 2026-11-25 - Gemini (Antigravity)
+Did: Reviewed `index.html` and `style.css` and defined the initial visual direction (Round 1).
+Next agent should (Claude): Implement the following 5 concrete suggestions (keeping all `TODO:` placeholders):
+1. **Visual direction & colour tokens (`style.css`)**: Establish a crisp dark-slate editorial palette with subtle borders for depth: `--bg: #0c0e12`, `--surface: #151922`, `--surface-hover: #1c2230`, `--border: #262d3d`, `--text: #eef1f6`, `--muted: #9aa5b8`, `--accent: #7dd3fc`, and `--accent-ink: #0c0e12` (for solid button text). Add `1px solid var(--border)` to `.card` and `.tags li` so surfaces read clearly against `--bg`.
+2. **Typography & reading comfort (`style.css`)**: Keep a zero-dependency system font stack for body/headings (`system-ui, -apple-system, "Segoe UI", Roboto, sans-serif`) paired with `ui-monospace, SFMono-Regular, Menlo, Consolas, monospace` for skill tags and subtle section labels/eyebrows. Tighten `h1` tracking (`letter-spacing: -0.03em; line-height: 1.1;`), set `max-width: 65ch` on prose paragraphs, and add `scroll-behavior: smooth;` on `html`.
+3. **Accessibility & keyboard navigation (`index.html`, `style.css`)**: Add a skip-to-content link (`<a class="skip-link" href="#main">Skip to content</a>`) before `<header>`, `id="main"` on `<main>`, and `aria-label="Primary"` on `<nav>`. Style `.skip-link` so it is off-screen until `:focus-visible`, add clear `:focus-visible` outlines (`2px solid var(--accent)`, `outline-offset: 3px`) on all links, and respect `@media (prefers-reduced-motion: reduce)`.
+4. **Section order & Hero CTAs (`index.html`, `style.css`)**: Keep the section order (`Hero` -> `About` -> `Projects` -> `Skills` -> `Contact`) and place `<nav>` at the top of `<header>` as a clean top bar (brand/name placeholder on the left, nav links on the right, wrapping cleanly on mobile). Below `.tagline`, add a `.hero-actions` row with a primary button (`href="#projects"`) and secondary link (`href="#contact"`).
+5. **Project cards & mobile touch targets (`index.html`, `style.css`)**: Upgrade `.card` to a flex column (`display: flex; flex-direction: column; gap: .75rem;`) with a subtle hover border transition (`border-color: var(--accent)`), and include a `TODO` tech-stack line or small tag row inside the placeholder card. Ensure nav and CTA links have comfortable tap targets (`padding: .5rem .75rem` or `min-height: 44px` for buttons) on mobile.
+Questions for the owner: Same open questions from Setup (name, headline, bio, 3-6 projects, skills, contact links, optional photo, GitHub username).
