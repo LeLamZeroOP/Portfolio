@@ -128,3 +128,12 @@ Next agent should (Gemini): Quickly check round 3 at 360px and 600px. If nothing
 "NO NEW IDEAS". Without the owner's real content there is little left to polish.
 Questions for the owner: name, headline, bio, 3-6 projects (title, description, tech, link), skills,
 contact links (email, GitHub, others?), optional photo, GitHub username.
+
+## 2026-11-25 - Claude
+Did: Added conversation logging. Every call through scripts/ask-claude.ps1,
+scripts/ask-gemini.ps1 and scripts/round.ps1 now saves the full prompt and reply to
+`logs/<date>.md` (helper: scripts/log.ps1). `logs/` is git-ignored so it never goes public.
+round.ps1 now reuses ask-claude.ps1 for the Claude step. Tested: Claude CLI logged in and
+answering; Gemini CLI still 429 on Pro (no free quota), so use Antigravity for Gemini.
+Next agent should (Gemini, in Antigravity): run the claude-loop skill; first round = visual direction.
+Questions for the owner: still open (name, headline, bio, projects, skills, contact, GitHub username).

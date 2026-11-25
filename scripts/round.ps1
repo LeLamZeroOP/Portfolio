@@ -5,6 +5,7 @@
 #         .\scripts\round.ps1 -Rounds 3  (three rounds; stop early if Gemini has no new ideas)
 param([int]$Rounds = 1)
 
+. "$PSScriptRoot\log.ps1"
 $root = Split-Path $PSScriptRoot -Parent
 Push-Location $root
 try {
@@ -22,23 +23,18 @@ template (Gemini). Do not edit any other file. If you have no new ideas, write
 "NO NEW IDEAS" in the entry.
 '@
 
-  $claudeTask = @'
-Read CLAUDE.md, AGENTS.md and the latest Gemini entry in HANDOFF.md.
-Implement the suggestions you agree with (say briefly why you skip any).
-Never invent facts about the owner; keep TODO placeholders.
-Then commit with a clear message and append a Claude entry to HANDOFF.md, and commit that too.
-'@
-
   for ($i = 1; $i -le $Rounds; $i++) {
     Write-Host "=== Round $i / $Rounds : Gemini reviewing ===" -ForegroundColor Cyan
-    gemini -p $geminiTask --approval-mode auto_edit
+    gemini -p $geminiTask --approval-mode auto_edit 2>&1 | ForEach-Object { "$_" } | Tee-Object -Variable gemOut
+    Write-AgentLog -From 'round.ps1' -To 'Gemini' -Prompt $geminiTask -Response ($gemOut -join "`n") -ExitCode $LASTEXITCODE
     if ((Get-Content HANDOFF.md -Raw) -match 'NO NEW IDEAS\s*$') {
       Write-Host "Gemini has no new ideas. Stopping - time for the owner to review." -ForegroundColor Yellow
       break
     }
 
     Write-Host "=== Round $i / $Rounds : Claude implementing ===" -ForegroundColor Green
-    claude -p $claudeTask --permission-mode acceptEdits --allowedTools "Bash(git add:*)" "Bash(git commit:*)" "Bash(git status:*)" "Bash(git diff:*)"
+    # Run in a child PowerShell: ask-claude.ps1 ends with 'exit', which would stop this loop.
+    powershell -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\ask-claude.ps1" -From 'Gemini (round.ps1)'
   }
 
   Write-Host "`nDone. Open index.html to check, then 'git push' when you are happy." -ForegroundColor Cyan
