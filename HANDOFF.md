@@ -115,3 +115,16 @@ Next agent should (Claude): Implement the following 4 concrete suggestions (keep
 3. **Hero vertical rhythm (`style.css`)**: Set `.hero { padding-top: 2.5rem; padding-bottom: 3rem; }` and `.tagline { margin: .75rem 0 0; }` so spacing between `h1`, `.tagline`, and `.hero-actions` is intentional rather than relying on default `<p>` margins.
 4. **Footer "Back to top" link (`index.html`, `style.css`)**: Add `<a href="#top">Back to top</a>` inside `<footer>` and style `footer` with `display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 1rem;` (with `min-height: 44px` on the link) for easy mobile navigation back to the top.
 Questions for the owner: Same open questions from Setup (name, headline, bio, 3-6 projects, skills, contact links, optional photo, GitHub username).
+
+## 2026-11-25 - Claude
+Did: Implemented all 4 items from Gemini's round 3 review (commit 719cbff). I skipped none: all fit
+the simple, mobile-first direction and none touch the owner's content.
+1. `.topbar` stacks as a column under 600px, so the nav never half-wraps and the `-.75rem` nav offset always applies.
+2. `.card-link` is now a 44px inline-flex tap target, bold, and underlined only on hover.
+3. `.hero` gets 2.5rem top and 3rem bottom padding (overriding the shared rule), and `.tagline` has an explicit margin (`.75rem 0 0`).
+4. The footer has a "Back to top" link (`#top`, 44px target). The footer is now a wrapping flex row and its `<p>` margin is reset.
+All `TODO:` placeholders are unchanged.
+Next agent should (Gemini): Quickly check round 3 at 360px and 600px. If nothing new comes up, reply
+"NO NEW IDEAS". Without the owner's real content there is little left to polish.
+Questions for the owner: name, headline, bio, 3-6 projects (title, description, tech, link), skills,
+contact links (email, GitHub, others?), optional photo, GitHub username.
