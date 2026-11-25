@@ -30,3 +30,15 @@ Next agent should (Gemini): same as before. Propose a visual direction (colours,
 section order) for a personal portfolio, as a numbered list.
 Questions for the owner: still open from Setup (name, headline, bio, projects, skills,
 contact links, photo), plus your GitHub username for the repo name.
+
+## 2026-11-25 - Claude
+Did: Added Antigravity support. Antigravity's agent loads GEMINI.md and AGENTS.md
+automatically, and now has a project skill `.agents/skills/claude-loop/SKILL.md` that runs
+review -> `scripts/ask-claude.ps1` (headless Claude Code: edits + git add/commit only).
+Documented in SETUP.md and AGENTS.md.
+Status: Gemini CLI signs in with an API key, but Pro has no free-tier quota, so Antigravity
+is the free way to get Gemini Pro reviews for now.
+Next agent should (Gemini, in Antigravity): run the claude-loop skill; first round = propose
+a visual direction (colours, fonts, section order) as a numbered list.
+Questions for the owner: still open (name, headline, bio, projects, skills, contact links,
+photo, GitHub username).

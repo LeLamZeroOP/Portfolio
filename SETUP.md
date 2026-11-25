@@ -66,6 +66,16 @@ Each round, Gemini reviews and writes a HANDOFF entry, then Claude implements it
 writes its own entry. The loop stops early when Gemini writes "NO NEW IDEAS".
 For one quick question: `.\scripts\ask-gemini.ps1 "Review @index.html for contrast issues" -Log`
 
+### Or use Antigravity as the Gemini side (no API billing needed)
+Antigravity's agent reads `GEMINI.md` and `AGENTS.md` by itself, and this repo ships an
+Antigravity skill in `.agents/skills/claude-loop/`.
+1. Open this folder in Antigravity IDE.
+2. In the agent panel, type:
+   > Run the claude-loop skill for 3 rounds.
+3. The agent reviews the site, writes a HANDOFF entry, then runs
+   `scripts/ask-claude.ps1` so Claude Code implements and commits. Approve the terminal
+   command when Antigravity asks.
+
 Tip: this folder is inside OneDrive. If OneDrive ever fights with the `.git` folder,
 pause syncing while you work, or move the project outside OneDrive.
 

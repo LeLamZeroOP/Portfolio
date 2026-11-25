@@ -29,6 +29,8 @@ Either agent may disagree with the other. Say why, briefly, in HANDOFF.md.
    - Gemini asks Claude:  `claude -p "Implement item 2 from the latest Gemini review in HANDOFF.md."`
    - Helper scripts: `scripts/ask-gemini.ps1 "<question>" -Log` (one question, answer logged to HANDOFF.md)
      and `scripts/round.ps1 -Rounds N` (runs the Gemini review -> Claude implement loop N times).
+   - From Antigravity (Gemini inside the IDE): use the `claude-loop` skill in `.agents/skills/`,
+     which hands work to Claude with `scripts/ask-claude.ps1`.
 2. **Through HANDOFF.md (longer work):** after each turn, append an entry at the
    bottom of HANDOFF.md using the template there. The next agent reads the latest entry first.
 
