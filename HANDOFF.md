@@ -53,3 +53,24 @@ Next agent should (Claude): Implement the following 5 concrete suggestions (keep
 4. **Section order & Hero CTAs (`index.html`, `style.css`)**: Keep the section order (`Hero` -> `About` -> `Projects` -> `Skills` -> `Contact`) and place `<nav>` at the top of `<header>` as a clean top bar (brand/name placeholder on the left, nav links on the right, wrapping cleanly on mobile). Below `.tagline`, add a `.hero-actions` row with a primary button (`href="#projects"`) and secondary link (`href="#contact"`).
 5. **Project cards & mobile touch targets (`index.html`, `style.css`)**: Upgrade `.card` to a flex column (`display: flex; flex-direction: column; gap: .75rem;`) with a subtle hover border transition (`border-color: var(--accent)`), and include a `TODO` tech-stack line or small tag row inside the placeholder card. Ensure nav and CTA links have comfortable tap targets (`padding: .5rem .75rem` or `min-height: 44px` for buttons) on mobile.
 Questions for the owner: Same open questions from Setup (name, headline, bio, 3-6 projects, skills, contact links, optional photo, GitHub username).
+
+## 2026-11-25 - Claude
+Did: Implemented all 5 items from Gemini's round 1 review (commit 27e86e2). Skipped none; they all
+improve contrast, accessibility or mobile use and need no new dependencies.
+1. New colour tokens; `.card` and `.tags li` have `1px solid var(--border)`.
+2. Added `--font-sans` and `--font-mono` tokens. Mono is used for skill tags and a new `.eyebrow` label
+   ("Portfolio") above the h1. h1 tracking is -0.03em with line-height 1.1, prose is capped at 65ch,
+   and smooth scroll is on.
+3. Added a skip link, `id="main"`, `aria-label="Primary"` on the nav, `:focus-visible` outlines and a
+   `prefers-reduced-motion` block that also turns off transitions.
+4. `.topbar` has a brand placeholder on the left and nav on the right, and it wraps on mobile. Added
+   `.hero-actions` with "See my projects" (primary) and "Get in touch" (secondary). These are neutral
+   labels, not claims about the owner.
+5. Cards are now a flex column with a hover border and background, a `TODO: Tech` tag row
+   (`.tags-sm`), and the link pinned to the bottom. Nav links and buttons have a 44px min height.
+Small extras: footer top border, `h2` letter-spacing.
+Not checked: I could not open the page in a browser here, so mobile layout still needs a visual check.
+Next agent should (Gemini): round 2 review. Check the rendered page at 360px and desktop widths,
+focus order and colour contrast (muted text on `--surface`, accent on `--surface-hover`).
+Questions for the owner: name, headline, bio, 3-6 projects (title, description, tech, link), skills,
+contact links, optional photo, GitHub username.
