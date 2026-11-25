@@ -66,6 +66,10 @@ Each round, Gemini reviews and writes a HANDOFF entry, then Claude implements it
 writes its own entry. The loop stops early when Gemini writes "NO NEW IDEAS".
 For one quick question: `.\scripts\ask-gemini.ps1 "Review @index.html for contrast issues" -Log`
 
+**Seeing the conversation:** HANDOFF.md has each agent's summary. The full back-and-forth
+(every prompt and reply sent through the scripts) is saved in `logs/<date>.md`. That folder
+is git-ignored, so it never goes public.
+
 ### Or use Antigravity as the Gemini side (no API billing needed)
 Antigravity's agent reads `GEMINI.md` and `AGENTS.md` by itself, and this repo ships an
 Antigravity skill in `.agents/skills/claude-loop/`.
