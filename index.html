@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lê Lâm (Zero_OP / Liam) - Portfolio</title>
-  <meta name="description" content="Lê Lâm (Zero_OP / Liam): Computer Science student at HCMUS APCS. Competitive programming and machine learning; VOI First Prize and ICPC National gold medalist.">
+  <meta name="description" content="Lê Lâm (Zero_OP / Liam): Computer Science student at HCMUS APCS. Competitive programming and machine learning; VOI First Prize and ICPC Vietnam National gold medalist.">
   <meta name="color-scheme" content="dark">
   <meta property="og:title" content="Lê Lâm (Zero_OP / Liam) - Portfolio">
   <meta property="og:description" content="Computer Science student and gym-enjoyer. Competitive programming and machine learning.">
   <meta property="og:image" content="assets/avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
   <link rel="stylesheet" href="style.css">
   <script>
     // Choose the language before the page paints: saved choice, else the browser's language.
@@ -23,215 +26,284 @@
 <body>
   <a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="vi">Bỏ qua đến nội dung</span></a>
 
-  <header class="hero" id="top">
-    <div class="topbar">
-      <a class="brand" href="#top">Lê Lâm</a>
-      <nav aria-label="Primary">
-        <a href="#about"><span lang="en">About</span><span lang="vi">Giới thiệu</span></a>
-        <a href="#awards"><span lang="en">Awards</span><span lang="vi">Giải thưởng</span></a>
-        <a href="#experience"><span lang="en">Experience</span><span lang="vi">Kinh nghiệm</span></a>
-        <a href="#projects"><span lang="en">Projects</span><span lang="vi">Dự án</span></a>
-        <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
-      </nav>
-      <button class="lang-toggle" type="button" id="lang-toggle"
-              aria-label="Language: switch between English and Vietnamese / Ngôn ngữ: chuyển Anh – Việt">
-        <span class="lang-opt" data-for="en">EN</span><span aria-hidden="true">/</span><span class="lang-opt" data-for="vi">VI</span>
-      </button>
-    </div>
-
-    <div class="hero-body">
-      <img class="avatar" src="assets/avatar.jpg" width="720" height="720"
-           alt="Lê Lâm smiling with a keyboard and medals, surrounded by programming contest T-shirts">
-      <div>
-        <p class="eyebrow">$ whoami · Zero_OP / Liam</p>
-        <h1>Lê Lâm</h1>
-        <p class="tagline">
-          <span lang="en">Computer Science student and gym-enjoyer.</span>
-          <span lang="vi">Sinh viên Khoa học Máy tính, mê tập gym.</span>
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#awards"><span lang="en">See my awards</span><span lang="vi">Xem giải thưởng</span></a>
-          <a class="btn btn-secondary" href="#contact"><span lang="en">Get in touch</span><span lang="vi">Liên hệ</span></a>
-        </div>
-      </div>
+  <header class="bar">
+    <a class="brand" href="#top">Zero_OP</a>
+    <nav aria-label="Primary">
+      <a href="#awards"><span lang="en">Awards</span><span lang="vi">Giải thưởng</span></a>
+      <a href="#experience"><span lang="en">Experience</span><span lang="vi">Kinh nghiệm</span></a>
+      <a href="#projects"><span lang="en">Projects</span><span lang="vi">Dự án</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / Ngôn ngữ">
+      <button type="button" data-set-lang="en">EN</button>
+      <button type="button" data-set-lang="vi">VI</button>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section id="about">
-      <h2><span lang="en">About me</span><span lang="vi">Giới thiệu</span></h2>
+    <article class="statement" id="top">
+      <header class="statement-head">
+        <h1><span lang="en">Problem A.</span><span lang="vi">Bài A.</span> Lê Lâm</h1>
+        <p class="limits">
+          <span lang="en">time limit per test: 2 seconds</span><span lang="vi">giới hạn thời gian: 2 giây</span><br>
+          <span lang="en">memory limit per test: 256 megabytes</span><span lang="vi">giới hạn bộ nhớ: 256 megabyte</span><br>
+          <span lang="en">also known as: Zero_OP, Liam</span><span lang="vi">còn được gọi là: Zero_OP, Liam</span>
+        </p>
+      </header>
+
+      <figure class="portrait">
+        <img src="assets/avatar.jpg" width="720" height="720"
+             alt="Lê Lâm smiling with a keyboard and medals, surrounded by programming contest T-shirts">
+        <figcaption>
+          <span lang="en">Figure 1. The author with a keyboard, a medal and a few contest T-shirts.</span>
+          <span lang="vi">Hình 1. Tác giả cùng bàn phím, huy chương và vài chiếc áo kỳ thi.</span>
+        </figcaption>
+      </figure>
+
+      <div class="legend">
+        <p lang="en">
+          Lê Lâm is a Computer Science student and gym-enjoyer. A freshman in the Advanced
+          Program in Computer Science (APCS) at HCMUS, Lâm focuses on competitive programming and
+          machine learning, with a growing interest in computer vision and large language models.
+          Outside of study, Lâm works out to keep both mind and body in shape.
+        </p>
+        <p lang="vi">
+          Lê Lâm là sinh viên Khoa học Máy tính và là một người mê tập gym. Lâm đang học năm nhất
+          Chương trình Tiên tiến ngành Khoa học Máy tính (APCS) tại Trường ĐH Khoa học Tự nhiên,
+          ĐHQG-HCM, tập trung vào lập trình thi đấu và học máy, và ngày càng quan tâm đến thị giác
+          máy tính cùng các mô hình ngôn ngữ lớn. Ngoài việc học, Lâm tập gym để giữ cả tinh thần lẫn
+          thể chất luôn khỏe.
+        </p>
+      </div>
+
+      <h2><span lang="en">Input</span><span lang="vi">Dữ liệu vào</span></h2>
+      <p lang="en">A single question about competitive programming, machine learning, or training.</p>
+      <p lang="vi">Một câu hỏi về lập trình thi đấu, học máy hoặc tập luyện.</p>
+
+      <h2><span lang="en">Output</span><span lang="vi">Kết quả</span></h2>
+      <p lang="en">A reply from Lê Lâm. Send your input to <a href="mailto:lelamctin2005@gmail.com">lelamctin2005@gmail.com</a>.</p>
+      <p lang="vi">Câu trả lời từ Lê Lâm. Gửi dữ liệu vào tới <a href="mailto:lelamctin2005@gmail.com">lelamctin2005@gmail.com</a>.</p>
+
+      <h2><span lang="en">Example</span><span lang="vi">Ví dụ</span></h2>
+      <div class="sample">
+        <div>
+          <p class="sample-label">input</p>
+          <pre>VOI 2026
+ICPC Vietnam National 2026</pre>
+        </div>
+        <div>
+          <p class="sample-label">output</p>
+          <pre>First Prize
+Gold Medal</pre>
+        </div>
+      </div>
+
+      <h2><span lang="en">Note</span><span lang="vi">Ghi chú</span></h2>
       <p lang="en">
-        I'm a freshman in the Advanced Program in Computer Science (APCS) at HCMUS. I focus on
-        competitive programming and machine learning, and I'm interested in computer vision and
-        large language models. Outside of study, I work out to improve my mental health and physique.
+        Writes C++ and Python. Works mostly on competitive programming and machine learning;
+        reads about computer vision, LLMs and research in between.
       </p>
       <p lang="vi">
-        Mình là sinh viên năm nhất Chương trình Tiên tiến ngành Khoa học Máy tính (APCS) tại
-        Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM (HCMUS). Mình tập trung vào lập trình thi đấu và học máy,
-        đồng thời quan tâm đến thị giác máy tính và các mô hình ngôn ngữ lớn (LLM). Ngoài việc học,
-        mình tập gym để cải thiện sức khỏe tinh thần và vóc dáng.
+        Dùng C++ và Python. Chủ yếu làm lập trình thi đấu và học máy; ngoài ra tìm hiểu thêm về
+        thị giác máy tính, LLM và nghiên cứu.
       </p>
-    </section>
 
-    <section id="skills">
-      <h2><span lang="en">Skills &amp; interests</span><span lang="vi">Kỹ năng &amp; quan tâm</span></h2>
-      <p class="section-lead"><span lang="en">Focus</span><span lang="vi">Trọng tâm</span></p>
-      <ul class="tags">
-        <li><span lang="en">Competitive Programming</span><span lang="vi">Lập trình thi đấu</span></li>
-        <li><span lang="en">Machine Learning</span><span lang="vi">Học máy</span></li>
-      </ul>
-      <p class="section-lead section-lead-gap"><span lang="en">Languages</span><span lang="vi">Ngôn ngữ lập trình</span></p>
-      <ul class="tags">
-        <li>C++</li>
-        <li>Python</li>
-      </ul>
-      <p class="section-lead section-lead-gap"><span lang="en">Interested in</span><span lang="vi">Quan tâm</span></p>
-      <ul class="tags tags-muted">
-        <li><span lang="en">Computer Vision</span><span lang="vi">Thị giác máy tính</span></li>
-        <li>LLMs</li>
-        <li><span lang="en">Research</span><span lang="vi">Nghiên cứu</span></li>
-      </ul>
-    </section>
+      <p class="submission">
+        <span class="submission-who"><span lang="en">Submission by Zero_OP, C++</span><span lang="vi">Bài nộp của Zero_OP, C++</span></span>
+        <span class="verdict" id="verdict" role="status">Accepted</span>
+      </p>
+    </article>
 
     <section id="awards">
       <h2><span lang="en">Awards</span><span lang="vi">Giải thưởng</span></h2>
-      <p class="section-lead"><span lang="en">Competitive Programming</span><span lang="vi">Lập trình thi đấu</span></p>
-      <ul class="achievements-list">
-        <li class="medal-gold">
-          <span class="achievement-title"><span lang="en">Gold Medal · ICPC Vietnam National 2026</span><span lang="vi">Huy chương Vàng · ICPC Quốc gia 2026</span></span>
-          <span class="achievement-detail"><span lang="en">Co-gold, 2nd place · team HCMUS-StarterTrio</span><span lang="vi">Đồng huy chương Vàng, hạng 2 · đội HCMUS-StarterTrio</span></span>
-        </li>
-        <li class="medal-gold">
-          <span class="achievement-title"><span lang="en">First Prize · VOI 2026</span><span lang="vi">Giải Nhất · VOI 2026</span></span>
-          <span class="achievement-detail"><span lang="en">Vietnamese Olympiad in Informatics</span><span lang="vi">Kỳ thi chọn HSG Quốc gia môn Tin học</span></span>
-        </li>
-        <li>
-          <span class="achievement-title"><span lang="en">Participant · APIO 2026</span><span lang="vi">Thí sinh · APIO 2026</span></span>
-          <span class="achievement-detail"><span lang="en">Asia-Pacific Informatics Olympiad</span><span lang="vi">Olympic Tin học Châu Á – Thái Bình Dương</span></span>
-        </li>
-        <li class="medal-silver">
-          <span class="achievement-title"><span lang="en">Second Prize · VOI 2025</span><span lang="vi">Giải Nhì · VOI 2025</span></span>
-          <span class="achievement-detail"><span lang="en">Vietnamese Olympiad in Informatics</span><span lang="vi">Kỳ thi chọn HSG Quốc gia môn Tin học</span></span>
-        </li>
-        <li class="medal-gold">
-          <span class="achievement-title"><span lang="en">Gold Medal · Olympic 30/4 2025</span><span lang="vi">Huy chương Vàng · Olympic 30/4 2025</span></span>
-          <span class="achievement-detail"><span lang="en">Informatics</span><span lang="vi">Tin học</span></span>
-        </li>
-        <li class="medal-bronze">
-          <span class="achievement-title"><span lang="en">Bronze Medal · ICPC Asia Regional 2025</span><span lang="vi">Huy chương Đồng · ICPC khu vực Châu Á 2025</span></span>
-          <span class="achievement-detail"><span lang="en">Team</span><span lang="vi">Đội</span> LHP-Koreoala (HSGS)</span>
-        </li>
-        <li>
-          <span class="achievement-title"><span lang="en">Honorable Mention · ICPC Vietnam National 2025</span><span lang="vi">Giải Khuyến khích · ICPC Quốc gia 2025</span></span>
-          <span class="achievement-detail"><span lang="en">Team</span><span lang="vi">Đội</span> LHP-Koreoala (HSGS)</span>
-        </li>
-        <li>
-          <span class="achievement-title"><span lang="en">Honorable Mention · VOI 2024</span><span lang="vi">Giải Khuyến khích · VOI 2024</span></span>
-          <span class="achievement-detail"><span lang="en">Vietnamese Olympiad in Informatics</span><span lang="vi">Kỳ thi chọn HSG Quốc gia môn Tin học</span></span>
-        </li>
-      </ul>
+      <table class="standings">
+        <thead>
+          <tr>
+            <th scope="col"><span lang="en">Year</span><span lang="vi">Năm</span></th>
+            <th scope="col"><span lang="en">Contest</span><span lang="vi">Kỳ thi</span></th>
+            <th scope="col"><span lang="en">Result</span><span lang="vi">Kết quả</span></th>
+            <th scope="col"><span lang="en">Team</span><span lang="vi">Đội</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026</td>
+            <td><span lang="en">ICPC Vietnam National</span><span lang="vi">ICPC Quốc gia</span></td>
+            <td><span class="balloon gold" aria-hidden="true"></span><span lang="en">Gold Medal, 2nd place (co-gold)</span><span lang="vi">Huy chương Vàng, hạng 2 (đồng HCV)</span></td>
+            <td>HCMUS-StarterTrio</td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td><span lang="en">Vietnamese Olympiad in Informatics</span><span lang="vi">Kỳ thi HSG Quốc gia môn Tin học</span></td>
+            <td><span class="balloon gold" aria-hidden="true"></span><span lang="en">First Prize</span><span lang="vi">Giải Nhất</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td><span lang="en">Asia-Pacific Informatics Olympiad</span><span lang="vi">Olympic Tin học Châu Á – Thái Bình Dương</span></td>
+            <td><span class="balloon plain" aria-hidden="true"></span><span lang="en">Participant</span><span lang="vi">Thí sinh</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td><span lang="en">Vietnamese Olympiad in Informatics</span><span lang="vi">Kỳ thi HSG Quốc gia môn Tin học</span></td>
+            <td><span class="balloon silver" aria-hidden="true"></span><span lang="en">Second Prize</span><span lang="vi">Giải Nhì</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td>Olympic 30/4</td>
+            <td><span class="balloon gold" aria-hidden="true"></span><span lang="en">Gold Medal</span><span lang="vi">Huy chương Vàng</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td><span lang="en">ICPC Asia Regional</span><span lang="vi">ICPC khu vực Châu Á</span></td>
+            <td><span class="balloon bronze" aria-hidden="true"></span><span lang="en">Bronze Medal</span><span lang="vi">Huy chương Đồng</span></td>
+            <td>LHP-Koreoala (HSGS)</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td><span lang="en">ICPC Vietnam National</span><span lang="vi">ICPC Quốc gia</span></td>
+            <td><span class="balloon plain" aria-hidden="true"></span><span lang="en">Honorable Mention</span><span lang="vi">Giải Khuyến khích</span></td>
+            <td>LHP-Koreoala (HSGS)</td>
+          </tr>
+          <tr>
+            <td>2024</td>
+            <td><span lang="en">Vietnamese Olympiad in Informatics</span><span lang="vi">Kỳ thi HSG Quốc gia môn Tin học</span></td>
+            <td><span class="balloon plain" aria-hidden="true"></span><span lang="en">Honorable Mention</span><span lang="vi">Giải Khuyến khích</span></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section id="experience">
       <h2><span lang="en">Experience</span><span lang="vi">Kinh nghiệm</span></h2>
-      <ol class="timeline">
-        <li>
-          <p class="when"><span lang="en">2025 – now</span><span lang="vi">2025 – nay</span></p>
-          <h3>VNOI · <span lang="en">Contest team</span><span lang="vi">Contest team</span></h3>
-          <p lang="en">Working on the contest team of VNOI, the Vietnamese informatics olympiad community.</p>
-          <p lang="vi">Thành viên contest team của VNOI, cộng đồng Olympic Tin học Việt Nam.</p>
-        </li>
-        <li>
-          <p class="when"><span lang="en">Now</span><span lang="vi">Hiện tại</span></p>
-          <h3>Google Developer Group on Campus – HCMUS</h3>
-          <p lang="en">Member of the AI/DS team.</p>
-          <p lang="vi">Thành viên ban AI/DS.</p>
-        </li>
-        <li>
-          <p class="when">2024 – 2025</p>
-          <h3>LHPIC</h3>
-          <p lang="en">Worked for the informatics club of Le Hong Phong High School for the Gifted.</p>
-          <p lang="vi">Hoạt động trong câu lạc bộ Tin học của trường THPT chuyên Lê Hồng Phong.</p>
-        </li>
-        <li>
-          <p class="when"><span lang="en">Writing</span><span lang="vi">Viết blog</span></p>
-          <h3><span lang="en">Algorithm blog</span><span lang="vi">Blog thuật toán</span></h3>
-          <p>
-            <a href="https://hackmd.io/@1OR5F5o5T_ahzGRzQ3ydZQ/H1zWG0DWT" target="_blank" rel="noopener">
-              <span lang="en">Read my posts on HackMD</span><span lang="vi">Đọc các bài viết trên HackMD</span> ↗
-            </a>
-          </p>
-        </li>
-      </ol>
+      <dl class="entries">
+        <div class="entry">
+          <dt><span lang="en">2025 – now</span><span lang="vi">2025 – nay</span></dt>
+          <dd>
+            <h3>VNOI</h3>
+            <p lang="en">Contest team of the Vietnamese informatics olympiad community.</p>
+            <p lang="vi">Contest team của VNOI, cộng đồng Olympic Tin học Việt Nam.</p>
+          </dd>
+        </div>
+        <div class="entry">
+          <dt><span lang="en">Now</span><span lang="vi">Hiện tại</span></dt>
+          <dd>
+            <h3>Google Developer Group on Campus – HCMUS</h3>
+            <p lang="en">Member of the AI/DS team.</p>
+            <p lang="vi">Thành viên ban AI/DS.</p>
+          </dd>
+        </div>
+        <div class="entry">
+          <dt>2024 – 2025</dt>
+          <dd>
+            <h3>LHPIC</h3>
+            <p lang="en">The informatics club of Le Hong Phong High School for the Gifted.</p>
+            <p lang="vi">Câu lạc bộ Tin học trường THPT chuyên Lê Hồng Phong.</p>
+          </dd>
+        </div>
+        <div class="entry">
+          <dt><span lang="en">Writing</span><span lang="vi">Viết</span></dt>
+          <dd>
+            <h3><a href="https://hackmd.io/@1OR5F5o5T_ahzGRzQ3ydZQ/H1zWG0DWT" target="_blank" rel="noopener"><span lang="en">Algorithm notes on HackMD</span><span lang="vi">Ghi chú thuật toán trên HackMD</span></a></h3>
+            <p lang="en">Blog posts explaining algorithms and techniques.</p>
+            <p lang="vi">Các bài viết giải thích thuật toán và kỹ thuật.</p>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="h2-follow"><span lang="en">Education</span><span lang="vi">Học vấn</span></h2>
+      <dl class="entries">
+        <div class="entry">
+          <dt><span lang="en">Now</span><span lang="vi">Hiện tại</span></dt>
+          <dd>
+            <h3><span lang="en">University of Science, VNU-HCM</span><span lang="vi">Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM</span></h3>
+            <p lang="en">Freshman, Advanced Program in Computer Science (APCS).</p>
+            <p lang="vi">Sinh viên năm nhất, Chương trình Tiên tiến ngành Khoa học Máy tính (APCS).</p>
+          </dd>
+        </div>
+        <div class="entry">
+          <dt>2023 – 2026</dt>
+          <dd>
+            <h3><span lang="en">Le Hong Phong High School for the Gifted, HCMC</span><span lang="vi">Trường THPT chuyên Lê Hồng Phong, TP.HCM</span></h3>
+            <p lang="en">Informatics specialized class.</p>
+            <p lang="vi">Lớp chuyên Tin học.</p>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <section id="projects">
       <h2><span lang="en">Projects</span><span lang="vi">Dự án</span></h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Workout Tracker</h3>
-          <p lang="en">An app I built to track my workouts and daily macronutrients.</p>
-          <p lang="vi">Ứng dụng mình làm để theo dõi các buổi tập và lượng macro dinh dưỡng mỗi ngày.</p>
-          <ul class="tags tags-sm" aria-label="Tech stack">
-            <li>React</li>
-            <li>TypeScript</li>
-            <li>Vite</li>
-            <li>Supabase</li>
-            <li>Recharts</li>
-            <li>Vercel</li>
-          </ul>
-          <div class="card-links">
-            <a class="card-link" href="https://workout-companian-forge.vercel.app/" target="_blank" rel="noopener">
-              <span lang="en">Open the app</span><span lang="vi">Mở ứng dụng</span> ↗
-            </a>
-            <a class="card-link" href="https://github.com/LeLamZeroOP/Workout-Companian-Forge-" target="_blank" rel="noopener">
-              <span lang="en">Source code</span><span lang="vi">Mã nguồn</span> ↗
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2><span lang="en">Education</span><span lang="vi">Học vấn</span></h2>
-      <ol class="timeline">
-        <li>
-          <p class="when"><span lang="en">Now · freshman</span><span lang="vi">Hiện tại · năm nhất</span></p>
-          <h3><span lang="en">University of Science, VNU-HCM (HCMUS)</span><span lang="vi">Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM</span></h3>
-          <p lang="en">Advanced Program in Computer Science (APCS)</p>
-          <p lang="vi">Chương trình Tiên tiến ngành Khoa học Máy tính (APCS)</p>
-        </li>
-        <li>
-          <p class="when">2023 – 2026</p>
-          <h3><span lang="en">Le Hong Phong High School for the Gifted, HCMC</span><span lang="vi">Trường THPT chuyên Lê Hồng Phong, TP.HCM</span></h3>
-          <p lang="en">Informatics specialized class</p>
-          <p lang="vi">Lớp chuyên Tin học</p>
-        </li>
-      </ol>
+      <dl class="entries">
+        <div class="entry">
+          <dt>Web app</dt>
+          <dd>
+            <h3>Workout Tracker</h3>
+            <p lang="en">Tracks my workouts and daily macronutrients. Built with React, TypeScript, Vite, Supabase and Recharts; hosted on Vercel.</p>
+            <p lang="vi">Theo dõi các buổi tập và lượng macro mỗi ngày. Xây dựng bằng React, TypeScript, Vite, Supabase và Recharts; chạy trên Vercel.</p>
+            <p class="links">
+              <a href="https://workout-companian-forge.vercel.app/" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="vi">Mở ứng dụng</span></a>
+              <a href="https://github.com/LeLamZeroOP/Workout-Companian-Forge-" target="_blank" rel="noopener"><span lang="en">Source code</span><span lang="vi">Mã nguồn</span></a>
+            </p>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <section id="contact">
       <h2><span lang="en">Contact</span><span lang="vi">Liên hệ</span></h2>
-      <ul class="contact-links">
-        <li><a href="mailto:lelamctin2005@gmail.com">Email (lelamctin2005@gmail.com)</a></li>
-        <li><a href="https://github.com/LeLamZeroOP" target="_blank" rel="noopener">GitHub (@LeLamZeroOP)</a></li>
+      <ul class="contact">
+        <li><a href="mailto:lelamctin2005@gmail.com">lelamctin2005@gmail.com</a></li>
+        <li><a href="https://github.com/LeLamZeroOP" target="_blank" rel="noopener">github.com/LeLamZeroOP</a></li>
         <li><a href="https://hackmd.io/@1OR5F5o5T_ahzGRzQ3ydZQ/H1zWG0DWT" target="_blank" rel="noopener">HackMD</a></li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Lê Lâm (Zero_OP)</p>
-    <a class="back-to-top" href="#top"><span lang="en">Back to top</span><span lang="vi">Lên đầu trang</span></a>
+    <p>© <span id="year"></span> Lê Lâm</p>
+    <a href="#top"><span lang="en">Back to the statement</span><span lang="vi">Về đầu đề bài</span></a>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lang-toggle').addEventListener('click', function () {
-      var next = document.documentElement.lang === 'vi' ? 'en' : 'vi';
-      document.documentElement.lang = next;
-      try { localStorage.setItem('lang', next); } catch (e) {}
+
+    // Language switch
+    var langButtons = document.querySelectorAll('[data-set-lang]');
+    function showLang(lang) {
+      document.documentElement.lang = lang;
+      langButtons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)); });
+    }
+    langButtons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        showLang(b.dataset.setLang);
+        try { localStorage.setItem('lang', b.dataset.setLang); } catch (e) {}
+      });
     });
+    showLang(document.documentElement.lang);
+
+    // The one animated moment: the submission is judged once on load.
+    (function () {
+      var v = document.getElementById('verdict');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var tests = 23, t = 0;
+      v.classList.add('running');
+      v.textContent = 'In queue';
+      setTimeout(function step() {
+        t++;
+        if (t <= tests) {
+          v.textContent = 'Running on test ' + t;
+          setTimeout(step, 55 + Math.random() * 60);
+        } else {
+          v.classList.remove('running');
+          v.textContent = 'Accepted';
+        }
+      }, 700);
+    })();
   </script>
 </body>
 </html>

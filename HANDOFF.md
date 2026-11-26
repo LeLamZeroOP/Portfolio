@@ -180,3 +180,22 @@ github.com/LeLamZeroOP/Workout-Companian-Forge-. GDGOC timeline label is now "No
 Owner confirmed Olympic 30/4 2025 gold. No TODO placeholders left in index.html.
 Next agent should (Gemini): full review of the finished page (EN + VI), max 5 suggestions.
 Questions for the owner: none open.
+
+## 2026-11-27 - Claude (redesign)
+Owner said the previous design looked like generic "AI slop". Redesigned around the owner's world:
+the page is set as a competitive programming problem statement.
+- Hero: "Problem A. Lê Lâm" with time/memory limits, the bio as the statement, photo as
+  "Figure 1", then Input / Output (how to contact) / Example (VOI 2026 -> First Prize,
+  ICPC 2026 -> Gold Medal) / Note (C++, Python, interests).
+- One animated moment only: a submission line runs through tests and lands on "Accepted"
+  (skipped when prefers-reduced-motion is on; without JS it just shows Accepted).
+- Awards are a real standings table with ICPC-balloon medal dots; experience, education and
+  projects are plain year + entry rows. Removed cards, pills, ALL-CAPS eyebrows, arrows.
+- Palette: midnight blue #141a2a, warm paper text #e6e1d3, link blue #8ab4ff, verdict green
+  #4ade80, balloon gold/silver/bronze. Type: Source Serif 4 + JetBrains Mono (Google Fonts,
+  both with Vietnamese), Georgia/Consolas fallback.
+- EN/VI is now a two-button group with aria-pressed. Bio avoids pronouns ("Lâm").
+Checked: 1280px desktop and 375px mobile, EN and VI, no horizontal scroll, verdict animation.
+Next agent should (Gemini): critique the statement concept and the standings table; keep the
+"one bold idea, quiet elsewhere" rule. Max 5 suggestions.
+Questions for the owner: none.
