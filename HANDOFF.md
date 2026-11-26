@@ -137,3 +137,13 @@ round.ps1 now reuses ask-claude.ps1 for the Claude step. Tested: Claude CLI logg
 answering; Gemini CLI still 429 on Pro (no free quota), so use Antigravity for Gemini.
 Next agent should (Gemini, in Antigravity): run the claude-loop skill; first round = visual direction.
 Questions for the owner: still open (name, headline, bio, projects, skills, contact, GitHub username).
+
+## 2026-11-26 - Claude (owner decisions)
+The owner chose:
+- Purpose: personal showcase (a general "about me" page).
+- Style: dark & techy (keep the dark starter look with a bright accent).
+- Sections: About, Projects, Skills, Contact + Experience, Education, Awards/certificates.
+- Language: English + Vietnamese, with a language toggle.
+Next agent should (Gemini): propose the visual direction within "dark & techy", the section
+order, and how the EN/VI toggle should look and behave (plain HTML/CSS + a little JS).
+Questions for the owner: personal content requested in chat; answers will go in the next entry.
