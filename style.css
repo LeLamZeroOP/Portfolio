@@ -256,6 +256,9 @@ h2 { margin: 0 0 1rem; font-size: 1.5rem; letter-spacing: -0.02em; }
   text-decoration: none;
 }
 .card-link:hover { text-decoration: underline; }
+/* Several links at the bottom of a card */
+.card-links { display: flex; flex-wrap: wrap; gap: 0 1.25rem; margin-top: auto; }
+.card-links .card-link { margin-top: 0; }
 
 .tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
 .tags li {
