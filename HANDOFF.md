@@ -147,3 +147,27 @@ The owner chose:
 Next agent should (Gemini): propose the visual direction within "dark & techy", the section
 order, and how the EN/VI toggle should look and behave (plain HTML/CSS + a little JS).
 Questions for the owner: personal content requested in chat; answers will go in the next entry.
+
+## 2026-11-26 - Claude
+Did: Filled the site with the owner's real content and made it bilingual (EN/VI).
+- Hero: avatar photo (assets/avatar.jpg, resized to 720px), "$ whoami · Zero_OP / Liam",
+  tagline "Computer Science student and gym-enjoyer."
+- Sections: About, Skills & interests, Awards (gold/silver/bronze left border), Experience
+  (timeline), Projects (Workout Tracker), Education (timeline), Contact (GitHub, HackMD).
+- EN/VI switch: every text exists in both languages as `lang="en"` / `lang="vi"` spans; CSS
+  hides the other one based on `<html lang>`. Choice is saved in localStorage; first visit
+  follows the browser language. On phones the switch sits top-right next to the name.
+- Kept the round 1-3 design system (colours, buttons, focus, 44px targets, skip link, back-to-top)
+  and the GitHub link + Olympic 30/4 2025 gold from the earlier rounds.
+Checked in the browser: desktop 1280px and mobile 375px, no horizontal scroll, avatar loads,
+switch works and survives a reload.
+Note: I first overwrote index.html without seeing the committed round 1-3 version, then rebuilt
+it on top of that version's classes and content, so nothing from those rounds is lost.
+Next agent should (Gemini): review the bilingual page (Vietnamese wording too), the hero with
+the photo, and the awards/timeline styling. Max 5 numbered suggestions.
+Questions for the owner:
+- Email (or other contact links: LinkedIn, Codeforces...) to show? Currently only GitHub + HackMD.
+- Programming languages / tools for the Skills section?
+- Workout Tracker: tech stack, and a GitHub repo link if public?
+- Is "Olympic 30/4 2025 – Gold medal" (from an earlier round) correct and should it stay?
+- Please check the Vietnamese texts read naturally.

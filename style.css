@@ -85,7 +85,44 @@ nav a {
 }
 nav a:hover { color: var(--text); background: var(--surface); }
 
+/* Language switch: <html lang> decides which version of each text is shown */
+html[lang="en"] [lang="vi"],
+html[lang="vi"] [lang="en"] { display: none !important; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  min-height: 44px;
+  padding: .5rem .85rem;
+  font: 600 .85rem var(--font-mono);
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.lang-toggle:hover { border-color: var(--accent); color: var(--text); }
+.lang-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+html[lang="en"] .lang-opt[data-for="en"],
+html[lang="vi"] .lang-opt[data-for="vi"] { color: var(--accent); }
+
 /* Hero */
+.hero-body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.avatar {
+  width: 168px;
+  height: 168px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 6px var(--surface), 0 0 40px rgba(125, 211, 252, .25);
+}
 .eyebrow {
   font-family: var(--font-mono);
   font-size: .8rem;
@@ -151,7 +188,45 @@ h2 { margin: 0 0 1rem; font-size: 1.5rem; letter-spacing: -0.02em; }
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
 }
+.achievements-list li { border-left-width: 4px; }
+.achievements-list .medal-gold   { border-left-color: #facc15; }
+.achievements-list .medal-silver { border-left-color: #cbd5e1; }
+.achievements-list .medal-bronze { border-left-color: #d97706; }
 .achievement-title { font-weight: 600; color: var(--text); }
+
+.section-lead-gap { margin-top: 1.5rem; }
+.tags-muted li { color: var(--muted); }
+
+/* Timeline (experience, education) */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid var(--border);
+  display: grid;
+  gap: 1.75rem;
+}
+.timeline li { position: relative; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.5rem - 7px);
+  top: .45rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.timeline h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
+.timeline p { margin: 0; color: var(--muted); }
+.timeline .when {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  letter-spacing: .05em;
+  color: var(--accent);
+  margin-bottom: .2rem;
+}
 .achievement-detail { color: var(--muted); font-family: var(--font-mono); font-size: .9rem; }
 
 .cards {
@@ -233,6 +308,12 @@ footer p { margin: 0; }
   .topbar { flex-direction: column; align-items: flex-start; margin-bottom: 2rem; }
   /* Line the first nav link's text up with the brand */
   nav { margin-left: -.75rem; }
+  /* Keep the EN/VI switch on the brand's row instead of its own line */
+  .topbar { position: relative; }
+  .lang-toggle { position: absolute; top: 0; right: 0; }
+  /* Photo above the text on phones */
+  .hero-body { grid-template-columns: 1fr; gap: 1.25rem; }
+  .avatar { width: 120px; height: 120px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
